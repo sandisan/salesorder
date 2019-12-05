@@ -1,0 +1,10 @@
+applications:
+- name: sales-order-service-491968
+  path: target/sales-order-service-0.0.1-SNAPSHOT.jar
+  memory: 750M
+  env:
+    SPRING-PROFILES-ACTIVE: dev
+  services:
+  - service-registry-491968
+  - rabbit-mq-491968
+  - config-server-491968
