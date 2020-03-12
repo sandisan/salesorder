@@ -26,11 +26,11 @@ public class SalesOrderController {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
-	@Autowired
-	ItemService itemService;
+	//@Autowired
+	//ItemService itemService;
 
-	@Autowired
-	SalesOrderConfig salesOrderConfig;
+	//@Autowired
+	//SalesOrderConfig salesOrderConfig;
 	
 	
 	@PostMapping(value = "/order", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -100,24 +100,11 @@ public class SalesOrderController {
 		sor.setOrderLineItem(olt);
 		return sor;
 	}
-	
-	@GetMapping("/config")
-	public Item configDefaultItemCheck() {
-		// TODO Auto-generated method stub
-		//System.out.println("Falling back");
-		Item itm = new Item();
-		itm.setId(999L);
-		itm.setName("default name");
-		itm.setDescription(salesOrderConfig.getFallbackmessage());
-		itm.setPrice("9999");
-		return itm ;
-	}
-	
-	
+		
 	public Response<Long> fallback(SalesOrderRequest salesOrderRequest) {
 		Response<Long> response = new Response<>();
 		response.setIsError(true);
-		response.setMessage(salesOrderConfig.getFallbackmessage());
+		response.setMessage("Unable To Process Order Request");
 		return response ;
 	}
 }
