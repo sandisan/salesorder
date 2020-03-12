@@ -1,41 +1,44 @@
 package com.casestudy.salesorder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import java.io.Serializable;
+
 import javax.persistence.Id;
 
-@Entity(name = "items")
-public class Item {
+public class Item implements Serializable {
 	
-	@Id
-	@GeneratedValue
-	private long id;
-	private String name;
-	private String description;
-	private String price;
-	public long getId() {
-		return id;
+	private static final long serialVersionUID = -7788619177798333712L;
+
+	private long itemId;
+	private String itemName;
+	private String itemDesc;
+	private String iemPrice;
+	public long getItemId() {
+		return itemId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setItemId(long itemId) {
+		this.itemId = itemId;
 	}
-	public String getName() {
-		return name;
+	public String getItemName() {
+		return itemName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
-	public String getDescription() {
-		return description;
+	public String getItemDesc() {
+		return itemDesc;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setItemDesc(String itemDesc) {
+		this.itemDesc = itemDesc;
 	}
-	public String getPrice() {
-		return price;
+	public String getIemPrice() {
+		return iemPrice;
 	}
-	public void setPrice(String price) {
-		this.price = price;
+	public void setIemPrice(String iemPrice) {
+		this.iemPrice = iemPrice;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }
