@@ -1,15 +1,21 @@
 package com.casestudy.salesorder;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name="item-service-491968", fallback = ItemServiceFallback.class)
-@RibbonClient(name="item-service-491968")
-public interface ItemService {
+import org.springframework.web.client.RestTemplate;
+
+
+public class ItemService {
 	
-	@GetMapping("/item/{itemName}")
-	public Item getItemByName(@PathVariable("itemName") String itemName);
+	//http://item-service-app-cicd.169-61-227-230.nip.io/items
+	
+	
+	public static Item getItemByName( String itemName) {
+		RestTemplate restTemplate = new RestTemplate();
+		String baseUrl = "http://item-service-app-cicd.169-61-227-230.nip.io/items/";
+		
+		Item item = restTemplate.getForObject(baseUrl+itemName,Item.class);
+		
+		return item;
+	}
 
 }
