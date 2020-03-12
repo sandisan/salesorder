@@ -55,8 +55,8 @@ public class SalesOrderController {
 		while (itemIterator.hasNext()) {
 			String itemName = itemIterator.next().getItemName();
 			Item item = ItemService.getItemByName(itemName);
-			System.out.println(itemName +" : "+item.getName());
-			if (item.getName()== null){
+			System.out.println(itemName +" : "+item.getItemName());
+			if (item.getItemName()== null){
 				hasAllItems = false;
 			}
 		}
