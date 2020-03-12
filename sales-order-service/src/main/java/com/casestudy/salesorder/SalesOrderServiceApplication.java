@@ -6,7 +6,7 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @EnableFeignClients("com.casestudy.salesorder")
 @SpringBootApplication
 @EnableCircuitBreaker
