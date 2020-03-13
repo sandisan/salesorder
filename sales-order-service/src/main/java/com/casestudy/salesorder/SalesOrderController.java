@@ -107,4 +107,11 @@ public class SalesOrderController {
 		response.setMessage("Unable To Process Order Request");
 		return response ;
 	}
+	
+    @CrossOrigin(origins = "*")
+    @GetMapping("/heartbeat")
+    @ResponseBody
+    public String getHeartBeat(){
+         return "success";
+    }
 }
