@@ -109,10 +109,9 @@ public class SalesOrderController {
 		return response ;
 	}
 	
-    @CrossOrigin(origins = "*")
-    @GetMapping("/heartbeat")
-    @ResponseBody
-    public String getHeartBeat(){
-         return "success";
-    }
+        @GetMapping("/heartbeat")
+        @ResponseBody
+        public String getHeartBeat(){
+	 return "success";
+        }
 }
